@@ -1,22 +1,24 @@
 import java.util.Random;
+import java.util.concurrent.ThreadLocalRandom;
 
 public class Dicer {
 
    public int firstDice(){
-        int faces;
+        int dice;
         Random generator = new Random();
-        faces = generator.nextInt(6) + 1;
-
-        return faces;
+        dice = generator.nextInt(6) + 1;
+        return dice;
    }
    
    public int secondDice(){
-       int faces;
+       int dice;
        Random generator = new Random();
-       faces = generator.nextInt(6) + 1;
-
-       return faces;
+       dice = generator.nextInt(6) + 1;
+       return dice;
   }
-
+   public int bothDice(){
+	   int dices = ThreadLocalRandom.current().nextInt(2, 12 + 1);
+	   return dices;
+   }
 
 }
